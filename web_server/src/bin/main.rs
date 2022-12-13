@@ -17,10 +17,10 @@ fn main() {
         let stream = stream.unwrap();
 
 
-        thread::spawn(|| {
+        pool.execute(|| {
             handle_connection(stream);
         });
-        println!("Connection established!");
+
     }
 
     // read data from the stream
